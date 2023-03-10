@@ -1,7 +1,8 @@
 
 import './App.css';
-import Navbar from './structure/components/Navbar';
 import Main from './structure/components/Main';
+import Navbar from './structure/components/Navbar';
+
 function App() {
   return (
     <div className="App">
