@@ -5,13 +5,15 @@ export default function () {
   return (
     <>
   <nav>
-    <div className='right_nav'>TriviaHere</div>
+    <div className='right_nav'>
+      <h1>TriviaHere</h1>
+      </div>
     <div className='left_nav'>
-      <ul>
+      <ul className='ul'>
         
-      <li>Home</li>
-      <li>API</li>
-      <li>Developer</li>
+      <li className='list_nav'>Home</li>
+      <li className='list_nav'>API</li>
+      <li className='list_nav'>Developer</li>
       </ul>
     </div>
   </nav>

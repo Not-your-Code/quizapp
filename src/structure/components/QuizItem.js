@@ -10,7 +10,7 @@ export default function QuizItem () {
     }
   return (
     <div>
-        <button type='submit' onSubmit={fetchdata()}> hello</button>
+        hey this is quizs
     </div>
   )
 }

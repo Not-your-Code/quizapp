@@ -1,15 +1,43 @@
-nav{
+@import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
+
+nav {
     display: flex;
-   justify-content: space-between   ;    
-   margin: 10px 50px;
+    justify-content: space-between;
+    margin: 10px 50px;
+
 }
 
-li{
+.list_nav {
+
     list-style-type: none;
+    font-family: 'Sono', sans-serif;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+
+
 }
-ul{
+
+.list_nav:nth-child(2){
+    color: green;
+}
+
+.ul {
     display: flex;
     justify-content: space-evenly;
     width: 900px;
+    margin-top: 31px;
     align-content: start;
+
+}
+
+* {
+    background-color: #212121;
+}
+
+h1 {
+    color: green;
+    font-size: 30px;
+    font-family: 'Sono', sans-serif;
+    cursor: pointer;
 }

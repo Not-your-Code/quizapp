@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../css/Main.css'
 import QuizItem from './QuizItem'
+import Footer from './Footer';
 
 
 export default function Main(props) {
@@ -9,7 +10,7 @@ export default function Main(props) {
   const [total, setTotal] = useState(0);
   const [categories, setCategories] = useState({});
   const [userCat, setUsercat] = useState('History')
-  const [userMode, setUserMode] = useState('Easy')
+  const [userMode, setUserMode] = useState('easy')
   const [userLimit, setUserLimit] = useState(1)
   const [user_is_quizing, setUser_is_quizing] = useState(false);
   const [fetched, setFetched] = useState({})
@@ -77,37 +78,44 @@ export default function Main(props) {
 
   return (
     <div className='container'>
-      <div className='message box cont'>
-        <p id='message-contnt box'>Welcome to trivia api</p>
+      {!user_is_quizing?""
+      : <div className='message '>
+      <p id='message-contnt '>Welcome to trivia api</p>
 
-        <div id="score">
-          <ul>
-            <label>Score</label>
-            <li>{score}</li>
-          </ul>
-          <ul>
-            <label>Question</label>
-            <li>{total}</li>
-          </ul>
-        </div>
+      <div id="score">
+        <ul>
+          <label>Score</label>
+          <li>{score}</li>
+        </ul>
+        <ul>
+          <label>Question</label>
+          <li>{total}</li>
+        </ul>
       </div>
-      <div className='content box cont'>
+    </div>
+      
+    }
+     
+     
         <div className='category'>
-          { !user_is_quizing ?
+        { !user_is_quizing ?
            <form method='get' onSubmit={handleSubmit} >
-           <label >Category </label>
-
-           <select value={userCat} onChange={handleChangeCat}>
-             {objKeys.map(key => (<option value={key}>{key}</option>))}
+           <label id="cat" >Choose Your Quiz !</label>
+           <label className='labels'>Choose Category : </label>
+           <select value={userCat} onChange={handleChangeCat} className="select" >
+            
+             {objKeys.map(key => (<option value={key}>{key}</option >))}
            </select>
-           <select value={userMode} onChange={handleChangeMode}>
+           <label className='labels'>Choose Your level :</label>
+           <select value={userMode} onChange={handleChangeMode} className="select">
              {mode.map(key => (<option value={key}>{key}</option>))}
            </select>
-           <select value={userLimit} onChange={handleChangeLimit}>
+           <label className='labels'>Choose Questions :</label>
+           <select value={userLimit} onChange={handleChangeLimit} className="select">
              {limit.map(key => (<option value={key}>{key}</option>))}
            </select>
-           <button type='submit'>submit</button>
-         </form> : <h1>"hello"</h1>
+           <button type='submit' className='btn'>Get Quiz</button>
+         </form> : <QuizItem/>
            
 
 
@@ -116,9 +124,9 @@ export default function Main(props) {
           }
          
         </div>
-      </div>
+      
 
-
+   <Footer />
     </div>
   )
 }
